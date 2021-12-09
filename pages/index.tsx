@@ -1,10 +1,26 @@
-import type { NextPage } from 'next';
-import Head from 'next/head';
-import Image from 'next/image';
-import styles from '../styles/Home.module.css';
+import { Box, Container, Heading } from '@chakra-ui/react';
 
-const Page: NextPage = () => {
-  return <div>Hello</div>;
+const Page = () => {
+  return (
+    <Container>
+      <Box
+        borderRadius='lg'
+        bg='red'
+        p={3}
+        mb={6}
+        align='center'
+      >{`Hi, I'm a front-end developer from Taiwan`}</Box>
+
+      <Box display={{ md: 'flex' }}>
+        <Box flexGrow={1}>
+          <Heading as='h2' variant='page-title'>
+            Chenhao Lin
+          </Heading>
+          <p>Something else...</p>
+        </Box>
+      </Box>
+    </Container>
+  );
 };
 
 export default Page;

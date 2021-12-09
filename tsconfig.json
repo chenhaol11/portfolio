@@ -16,8 +16,8 @@
     "jsx": "preserve",
     "noUnusedLocals": false,
     "noUnusedParameters": false,
-    "incremental": true
-    // "baseUrl": "src"
+    "incremental": true,
+    "baseUrl": "./"
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
