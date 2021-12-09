@@ -2,6 +2,7 @@ import NextLink from 'next/link';
 import {
   Container,
   Box,
+  Text,
   Link,
   Stack,
   Heading,
@@ -47,7 +48,36 @@ const NavBar = (props) => {
       zIndex={1}
       {...props}
     >
-      NavBar
+      <Container
+        display='flex'
+        p={2}
+        maxW='container.md'
+        flexWrap='wrap'
+        justifyContent='space-between'
+        alignItems='center'
+      >
+        <Flex align='center' mr={5}>
+          <Heading as='h1' size='lg' letterSpacing='tighter'>
+            <Logo />
+          </Heading>
+        </Flex>
+
+        <Stack
+          direction={{ base: 'column', md: 'row', lg: 'column' }}
+          display={{ base: 'none', md: 'flex' }}
+          width={{ base: 'full', md: 'auto' }}
+          alignItems='center'
+          flexGrow={1}
+          mt={{ base: 4, md: 0 }}
+        >
+          <LinkItem href='/works' path={path}>
+            Works
+          </LinkItem>
+          <LinkItem href='/posts' path={path}>
+            Posts
+          </LinkItem>
+        </Stack>
+      </Container>
     </Box>
   );
 };
