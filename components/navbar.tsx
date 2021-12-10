@@ -23,7 +23,7 @@ const LinkItem = ({ href, path, children }) => {
   const inactiveColor = useColorModeValue('grey.200', 'whiteAlpha.900');
 
   return (
-    <NextLink href={href}>
+    <NextLink href={href} passHref>
       <Link
         p={2}
         bg={active ? 'glassTeal' : undefined}
@@ -63,7 +63,7 @@ const NavBar = (props) => {
         </Flex>
 
         <Stack
-          direction={{ base: 'column', md: 'row', lg: 'column' }}
+          direction={{ base: 'column', md: 'row' }}
           display={{ base: 'none', md: 'flex' }}
           width={{ base: 'full', md: 'auto' }}
           alignItems='center'
@@ -77,6 +77,36 @@ const NavBar = (props) => {
             Posts
           </LinkItem>
         </Stack>
+
+        <Box flex={1} align='right'>
+          <Box ml={2} display={{ base: 'inline-block', md: 'none' }}>
+            <Menu>
+              <MenuButton
+                as={IconButton}
+                icon={<HamburgerIcon />}
+                variant='outline'
+                aria-label='Options'
+              />
+              <MenuList>
+                <MenuItem as={Link} href='/about'>
+                  About
+                </MenuItem>
+                <MenuItem as={Link} href='/works'>
+                  Works
+                </MenuItem>
+                <MenuItem as={Link} href='/posts'>
+                  Posts
+                </MenuItem>
+                <MenuItem
+                  as={Link}
+                  href='https://github.com/chenhaol11/portfolio'
+                >
+                  View Source
+                </MenuItem>
+              </MenuList>
+            </Menu>
+          </Box>
+        </Box>
       </Container>
     </Box>
   );
